@@ -283,11 +283,16 @@
         transform: translate(-40%, 5%);
     }
 
-    .btn{
+    .btn button:nth-child(1){
         transform: translateX(-20%);
     }
 
+    .btn button:nth-child(2){
+        display: none;
+    }
+
     .arrows{
-        transform: translateY(100%);
+        position: absolute;
+        top: 90%;
     }
 }
