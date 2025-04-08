@@ -172,6 +172,58 @@ header h1:hover{
     }
 }
 
+@media (max-width: 540px){
+    header nav{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    header nav a{
+        width: 70%;
+        font-size: 1em;
+    }
+
+   .content h1{
+        line-height: 1em;
+        font-size: 1.7em;
+   }
+
+   .content p{
+        width: 70%;
+        font-size: 0.9em
+   }
+
+   #inicio p{
+    width: auto;
+   }
+
+   #quemsomos .container-texto .conteudo p{
+    width: 80%;
+   }
+
+   .imagens-container h3{
+    margin: auto;
+    text-align: center;
+   }
+
+   .imagem-1, .imagem-2{
+    width: 70%;
+    height: 70%;
+   }
+
+   #texto-dubois, #texto-ricardo{
+    width: 100%;
+    margin: auto;
+   }
+
+
+   #duvidas{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+   }
+   
+}
 
 .bg{
     background-image: url("https://images.pexels.com/photos/260922/pexels-photo-260922.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
@@ -390,9 +442,17 @@ img:hover{
 }
 
 .duvida img{
+    width: 20px;
+    height: 20px;
     position: absolute;
     top: 32px;
     right: 24px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+img.turn{
+    transform: rotateZ(-180deg);
 }
 
 .duvida .paragrafo{
@@ -403,24 +463,34 @@ img:hover{
     border-radius: 0 0 8px 8px;
     margin-top: -8px;
     padding: 24px;
-    animation: colapso 1s ease-in-out;
+    opacity: 0;
+    overflow: hidden;
+    transition: 300ms;
 }
 
-@keyframes colapso {
-    from{
-        display: block;
-    }
-
-    to{
-        display: none;
-    }
+.duvida.ativa .paragrafo{
+    height: fit-content;
+    opacity: 1;
+    padding: 24px;
 }
+
 
 @media (max-width: 1290px) {
-    
+
 }
 
 @media (max-width: 1070px) {
+    .imagem-duvidas{
+        display: none;
+    }
+
+    .duvida{
+        margin: 40px auto;
+    }
+
+    #duvidas h2{
+        text-align: center;
+    }
     
 }
 
@@ -429,5 +499,11 @@ img:hover{
 }
 
 @media (max-width: 768px){
+    #duvidas h2{
+        line-height: 50px;
+    }
+}
 
+footer h2{
+    color: var(--cor1);
 }
