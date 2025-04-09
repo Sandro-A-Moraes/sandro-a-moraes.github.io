@@ -465,10 +465,13 @@ img.turn{
     padding: 24px;
     opacity: 0;
     overflow: hidden;
-    transition: 300ms;
+    max-height: 0;
+    transition: max-height 500ms ease-in-out;
+
 }
 
 .duvida.ativa .paragrafo{
+    max-height: 600px;
     height: fit-content;
     opacity: 1;
     padding: 24px;
@@ -480,12 +483,13 @@ img.turn{
 }
 
 @media (max-width: 1070px) {
+
     .imagem-duvidas{
         display: none;
     }
 
     .duvida{
-        margin: 40px auto;
+        margin: 0px auto;
     }
 
     #duvidas h2{
@@ -499,9 +503,33 @@ img.turn{
 }
 
 @media (max-width: 768px){
+    #duvidas{
+        text-align: center;
+    }
+
     #duvidas h2{
         line-height: 50px;
     }
+
+    .duvida h3{
+        text-align: left;
+        font-size: 1.3em;
+    }
+
+}
+
+@media (max-width: 540px){
+    .duvida h3{
+        font-size: 1.1em;
+        text-wrap: pretty;
+    }
+
+    /* .duvida img{
+        position: absolute;
+        top: 40px;
+    } */
+
+   
 }
 
 footer h2{
