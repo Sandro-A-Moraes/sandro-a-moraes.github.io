@@ -523,6 +523,60 @@ img.turn{
    
 }
 
+footer{
+    color: white;
+}
+
 footer h2{
     color: var(--cor1);
+}
+
+
+footer img{
+    color: white;
+    width: 40px;
+}
+
+footer ul{
+    padding: 0px 10px;
+}
+
+footer ul li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: .4%;
+    margin: 20px 0px;
+}
+
+footer ul li a{
+    color: white;
+    text-decoration: none;
+    transition: all .2s ease-in-out;
+
+}
+
+footer ul li a:hover{
+    color: var(--cor2);
+}
+
+footer p{
+    text-align: center;
+}
+
+
+@media (max-width: 540px){
+    footer h2{
+        font-size: 1.5em;
+    }
+
+    footer img{
+        width: 10%;
+    }
+
+    footer p{
+        margin: 0 auto;
+        font-size: 1em;
+    }
 }
