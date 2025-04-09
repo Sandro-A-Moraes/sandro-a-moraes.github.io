@@ -477,11 +477,6 @@ img.turn{
     padding: 24px;
 }
 
-
-@media (max-width: 1290px) {
-
-}
-
 @media (max-width: 1070px) {
 
     .imagem-duvidas{
@@ -496,10 +491,6 @@ img.turn{
         text-align: center;
     }
     
-}
-
-@media (max-width: 865px){
-
 }
 
 @media (max-width: 768px){
@@ -524,10 +515,10 @@ img.turn{
         text-wrap: pretty;
     }
 
-    /* .duvida img{
+    .duvida img{
         position: absolute;
-        top: 40px;
-    } */
+        right: 10px;
+    }
 
    
 }
