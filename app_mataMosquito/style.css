@@ -54,6 +54,6 @@ body{
     flex-direction: column;
 }
 
-#logoGame{
+.logoGame{
     max-width: 80%;
 }
