@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <script>
+        function comecarJogo(){
+            let nivel = document.getElementById('nivel').value
+
+            if(nivel === ''){
+                alert('Selecione um nível')
+                return false
+            } 
+
+            window.location.href = 'app.html?' + nivel
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="d-flex justify-content-center">
+                    <img id="logoGame" src="imagens/game.png" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="d-flex justify-content-center">
+                    <div class="mb-2">
+                        <select class="form-control" id="nivel">
+                            <option value="">--Selecione o nível--</option>
+                            <option value="facil">Fácil</option>
+                            <option value="normal">Normal</option>
+                            <option value="dificil">Difícil</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="d-flex justify-content-center">
+                    <button class="btn btn-dark btn-lg" onclick="comecarJogo()">Começar o Jogo</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
