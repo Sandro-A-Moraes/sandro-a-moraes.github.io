@@ -47,7 +47,8 @@ header{
 }
 
 header .bg_img {
-    width: 100%; height: 100%;
+    width: 100%; 
+    height: 100%;
     position: absolute;
     z-index: -1;
     top: 0;
@@ -156,166 +157,84 @@ header .container_titulo .arara_menor {
 }
 
 
+/* MENU */
 
-
-
-
-
-/*//// MENU ////*/
-section.container .menu_hamburguer {
-    width: 2rem;
-    height: 2rem;
-    position: fixed;
-    z-index: 1001;
-    right: 2rem;
-    top: 2rem;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    cursor: pointer;
-    z-index: 1001;
-}
-
-section.container .menu_hamburguer .line {
-    width: 100%;
-    height: .1rem;
-    padding: 2px;
-    border-radius: 12px;
-    background-color: #DAD7CD;
-    box-shadow: 0.1rem 0.1rem 3px black;
-    transition: transform .7s;
-}
-
-/* O JS aplica a classe .efeito_vidro quando o botão é pressionado e retira quando ele é pressionado novamente*/
-section.container .efeito_vidro { 
-    background-color: rgba(0, 0, 0, 0.567);
-    backdrop-filter: blur(11px);
-    width: 100%;
-    height: 100vh;
-    position: fixed;
-    z-index: 99;
-    transition: all 2s;
-    
-}
-
-
-
-/* ESSES AQUI SÃO AS ANIMAÇÕES DO MENU (NÃO MEXER) */
-/* Essas classes são ativadas e desativadas pelo JS */
-.show_menu #line1 {
-    transform:  rotate(45deg) translate(.4rem, .9rem);
-    background-color: #DAD7CD;
-    box-shadow: none;
-}
-
-.show_menu #line2 {
-    opacity: 0;
-    visibility: hidden;
-}
-
-.show_menu #line3 {
-    transform: rotate(-45deg)  translate(.29rem, -.8rem);
-    background-color: #DAD7CD;
-    box-shadow: none;
-}
-
-/* Animações da sidebar (barra lateral) */
-
-section > div > aside.sidebar {
-    width: 100%;
-    height: 100vh;
-    background-color: #020805ab;
-    box-shadow: 10px 5px 15px 10px rgba(0,0,0,0.582);
+#btn-menu{
+    z-index: 77777;
     position: fixed;
     top: 0;
-    right: -300%;
-    
-    transition: all .8s;
-}
-
-.show_menu .sidebar {
     right: 0;
-    z-index: 1;
+    cursor: pointer;
+    
 }
 
-section > div > aside > nav > .menu {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    display: flex;
-    gap: 70px;
-}
-
-section > div > aside > nav > div > a > .menu_item {
-    width: 300px;
-    height: 400px;
-    list-style: none;
-    text-align: center;
-    margin-bottom: .5rem;
-    border-radius: 10px;
-    opacity: 90%;
-    filter: brightness(50%);
-    transition: all .6s;
-}
-
-@media (min-width: 700px) {
-section > div > aside > nav > div > a > .menu_item:hover{
-    filter: brightness(100%);
-}
-}
-
-section > div > aside > nav > div > a > div > .nome_item{
-    color: #DAD7CD;
-    transition: all .7s;
-}
-
-@media (min-width: 700px) {
-section > div > aside > nav > div > a > div > .nome_item:hover{
-    font-size: 1.2em;
-    color: #3A5A40;
-
-}
-}
-
-section > div > aside > nav > div > a > #item1{
-    background-image: url(../images/img01.jpg);
-    background-size: cover;
-    background-position: 50%;
-    background-repeat: no-repeat;
+.btn-fechar{
+    padding: 5px;
+    cursor: pointer;
 
 }
 
-section > div > aside > nav > div > a > #item2{
-    background-image: url(../images/img06.jpg);
-    background-size: cover;
-    background-position: 50%;
-    background-repeat: no-repeat;
-}
 
-section > div > aside > nav > div > a > #item3{
-    background-image: url(../images/brigadista-img.jpg);
-    background-size: cover;
-    background-position: 50%;
-    background-repeat: no-repeat;
-}
+.menu-mobile{
+    background-color: #01342f;
+    position: fixed;
+    right: 0;
+    width: 0%;
+    overflow: hidden;
+    height: 100%;
+    z-index: 99999;
+    transition: .5s;
 
-section > div > aside > nav > div > .menu_link {
-    font-family:"Bebas Neue", sans-serif;
-    font-size: 2rem;
-    /* color: #DAD7CD; */
-    transition: color .7s;
-}
+    & nav{
+        position: absolute;
+        top: 20%;
+        height: 40%;
+        width: 100%;
 
-/* FIM DAS ANIMAÇÕES DO MENU */
-@media (max-width: 750px) {
-    section.section
-    section.container .menu_hamburguer,
-    section.container .menu_hamburguer .line,
-    section.container .efeito_vidro 
-    {
-        display: none;
+        & ul{
+            height: 100%;
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+
+            & li{
+                padding: 10px;
+                display: flex;
+                align-items: center;
+                height: 100%;
+                border: 1px solid transparent;
+                transition: .5s;
+            
+                &:hover{
+                    border-bottom: 1px solid rgb(128, 128, 128);
+                }
+
+                & a{
+                    color: #f5f5f5;
+                }
+            }
+        }
     }
 }
+
+.overlay-menu{
+    position: fixed;
+    z-index: 88888;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.764);
+    display: none;
+    transition: .5s;
+
+}
+
+.menu-mobile.abrir-menu{
+    width: 70%;
+
+    ~ .overlay-menu{
+        display: block;
+    }
+}
+
+/* Fim MENU */

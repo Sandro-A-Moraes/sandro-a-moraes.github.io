@@ -19,37 +19,45 @@
 <body>
     
     <!-- Seção do menu lateral -->
-    <section class="container"> <!--Seção que contém menu e fundo borrado-->
-
-        <div class="menu_hamburguer">
-            <span class="line" id="line1"></span> <!--Linhas do menu-->
-            <span class="line" id="line2"></span> <!--Linhas do menu-->
-            <span class="line" id="line3"></span> <!--Linhas do menu-->
+    <div class="menu-mobile" id="menu-mobile">
+        <div class="btn-fechar" id="btn-fechar">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+            </svg>
         </div>
 
-        <div class="fundo_vidro"> <!--Div de background que deixa o fundo borrado-->
-            <aside class="sidebar"> <!--Barra lateral que aparece ao clicar no menu-->
-                <nav class="navegacao">
-                    <div class="menu">
+        <nav>
+            <ul>
+                <li>
+                    <a href="">Início</a>
+                </li>
 
-                        <a href="#home" id="menu_link_1" class="menu_link">
-                            <div class="menu_item" id="item1"><span class="nome_item">Home</span></div>
-                        </a> <!--Item do menu-->
+                <li>
+                    <a href="">Sobre Nós</a>
+                </li>
 
-                        <a href="#mais__visitados" id="menu_link_2" class="menu_link">
-                            <div class="menu_item" id="item2"><span class="nome_item">Mais Visitados</span></div>
-                        </a> <!--Item do menu-->
+                <li>
+                    <a href="">Imagens</a>
+                </li>
 
-                        <a href="https://wa.me/5594984389699" id="menu_link_3" class="menu_link" >
-                            <div class="menu_item" id="item3"><span class="nome_item">Fale Conosco</span></div>
-                        </a> <!--Item do menu-->
-                    </div>
-                </nav>
-            </aside>
-        </div>
-    </section>
+                <li>
+                    <a href="">Contato</a>
+                </li>
+
+            </ul>
+        </nav>
+    </div> <!--Fim menu-->
+    <div class="overlay-menu">
+    </div>
 
    <header id="home"> <!-- Cabeçalho da página, que contém capa, título e araras.-->
+
+        <div class="btn-abrir-menu" id="btn-menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+          </svg>
+        </div>
+
         <div class="bg_img"></div> <!--Capa-->
         <div class="container_titulo"> <!-- Container do título-->
             <!-- Título -->

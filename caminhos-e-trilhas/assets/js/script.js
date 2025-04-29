@@ -1,18 +1,16 @@
-// ANIMAÇÕES DO MENU (NÃO MEXER)
+let btnMenu = document.getElementById('btn-menu')
+let menu = document.getElementById('menu-mobile')
+let btnFechar = document.getElementById('btn-fechar')
 
-document.querySelector(".menu_hamburguer").addEventListener("click", () => document.querySelector(".container").classList.toggle("show_menu"));
-document.querySelector(".menu_hamburguer").addEventListener("click", () => document.querySelector(".fundo_vidro").classList.toggle("efeito_vidro"));
 
-// Animações dos itens de menu (tentei uma classe única, mas funcionava apenas para o primeiro item)
+btnMenu.addEventListener( 'click' ,()=>{
+    menu.classList.add('abrir-menu')
+    
+})
 
-document.querySelector("#menu_link_1").addEventListener("click", () => document.querySelector(".container").classList.toggle("show_menu"));
-document.querySelector("#menu_link_1").addEventListener("click", () => document.querySelector(".fundo_vidro").classList.toggle("efeito_vidro"));
-
-document.querySelector("#menu_link_2").addEventListener("click", () => document.querySelector(".container").classList.toggle("show_menu"));
-document.querySelector("#menu_link_2").addEventListener("click", () => document.querySelector(".fundo_vidro").classList.toggle("efeito_vidro"));
-
-document.querySelector("#menu_link_3").addEventListener("click", () => document.querySelector(".container").classList.toggle("show_menu"));
-document.querySelector("#menu_link_3").addEventListener("click", () => document.querySelector(".fundo_vidro").classList.toggle("efeito_vidro"));
+btnFechar.addEventListener('click', ()=>{
+    menu.classList.remove('abrir-menu')
+})
 
 
 
