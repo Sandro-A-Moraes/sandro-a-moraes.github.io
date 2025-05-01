@@ -237,4 +237,14 @@ header .container_titulo .arara_menor {
     }
 }
 
+@media (min-width: 576px) {
+    .overlay-menu{
+        background-color: rgba(0, 0, 0, 0.453);
+    }
+
+    .menu-mobile.abrir-menu{
+        width: 30%;
+    }
+}
+
 /* Fim MENU */
