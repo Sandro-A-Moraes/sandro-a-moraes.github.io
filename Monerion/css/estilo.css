@@ -1,0 +1,21 @@
+#home {
+	background: #ffc107;
+	padding-top: 60px;
+	color: white;
+}
+
+#recursos, #juros{
+	padding: 60px 0px;
+}
+
+#menu_navegacao{
+	position: fixed;
+	top: -1px;
+	width: 100%;
+	z-index: 99999;
+
+}
+
+footer p a{
+	margin: 5px 15px;
+}
