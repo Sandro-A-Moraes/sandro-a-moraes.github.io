@@ -3,7 +3,8 @@ let listaDespesas = []
 let tbody = document.getElementById('dados')
 
 class Despesa{
-    constructor(ano, mes, dia, tipo, descricao, valor){
+    constructor(id, ano, mes, dia, tipo, descricao, valor){
+        this.id = id
         this.ano = ano
         this.mes = mes
         this.dia = dia
@@ -85,6 +86,7 @@ function registrarDespesa(){
         alert('Um dos campos está vazio ou incorreto! Preencha-o corretamente.')
     } else{
         let despesa = new Despesa(
+                id = bd.getProximoId(),
                 ano,
                 mes,
                 dia,

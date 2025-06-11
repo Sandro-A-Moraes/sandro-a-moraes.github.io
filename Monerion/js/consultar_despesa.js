@@ -20,6 +20,7 @@ class Bd{
             localStorage.setItem('id', 0)
         }
     }
+
     getProximoId(){
         let proximoId = localStorage.getItem('id')
         return parseInt(proximoId) + 1
@@ -58,7 +59,7 @@ function mostrarHistorico(){
     for(let i = 0; i<tamanhoLocalStorage; i++){
         tbody.innerHTML += `
             <tr>
-                <td>${i+1}</td>
+                <td>${listaDespesas[i].id}</td>
                 <td>${listaDespesas[i].ano}</td>
                 <td>${listaDespesas[i].mes}</td>
                 <td>${listaDespesas[i].dia}</td>
@@ -102,10 +103,10 @@ function buscarDespesa(){
     
     tbody.innerHTML = ''
 
-    listaFiltrada.forEach((despesa, id)=>{
+    listaFiltrada.forEach((despesa)=>{
         tbody.innerHTML += `
             <tr>
-                <td>${id+1}</td>
+                <td>${despesa.id}</td>
                 <td>${despesa.ano}</td>
                 <td>${despesa.mes}</td>
                 <td>${despesa.dia}</td>
