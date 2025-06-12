@@ -5,9 +5,7 @@ let listaDespesas = []
 let listaReceitas = []
 let tbody = document.getElementById('dados')
 
-
 let bd = new Bd()
-
 
 function mostrarTransacoes(categoria){
 
