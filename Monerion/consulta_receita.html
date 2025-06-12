@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
+     <link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
@@ -14,7 +15,7 @@
 
     <title>Orçamento Pessoal</title>
 </head>
-<body onload="mostrarHistorico()">
+<body onload="mostrarTransacoes('receita')">
     <header>
         <nav class="navbar navbar-expand-md navbar-light bg-info">
         <div class="container">
@@ -30,17 +31,17 @@
             <ul class="nav nav-pills ml-auto">
               <li class="nav-item"><a href="index.html" class="nav-link text-white">Home</a></li>
               <li class="nav-item dropdown">
-                <a href="" class="nav-link dropdown-toggle text-white active" data-toggle="dropdown" aria-expanded="false">Despesas</a>
+                <a href="" class="nav-link dropdown-toggle text-white" data-toggle="dropdown" aria-expanded="false">Despesas</a>
                 <div class="dropdown-menu">
-                  <a class="dropdown-item" href="orcamento_pessoal.html">Registrar Despesas</a>
-                  <a class="dropdown-item" href="consulta.html">Consultar Despesas</a>
+                  <a class="dropdown-item" href="despesa.html">Registrar Despesas</a>
+                  <a class="dropdown-item" href="consulta_despesa.html">Consultar Despesas</a>
                 </div>
               </li>
               <li class="nav-item dropdown">
-                <a href="" class="nav-link dropdown-toggle text-white" data-toggle="dropdown" aria-expanded="false">Receitas</a>
+                <a href="" class="nav-link dropdown-toggle text-white active" data-toggle="dropdown" aria-expanded="false">Receitas</a>
                 <div class="dropdown-menu">
-                  <a class="dropdown-item" href="">Registrar Receitas</a>
-                  <a class="dropdown-item" href="">Consultar Receitas</a>
+                  <a class="dropdown-item" href="receita.html">Registrar Receitas</a>
+                  <a class="dropdown-item" href="consulta_receita.html">Consultar Receitas</a>
                 </div>
               </li>
               <li class="nav-item"><a href="" class="nav-link text-white">Histórico</a></li>
@@ -53,7 +54,8 @@
     <div class="container">
       <div class="row mb-5">
         <div class="col mb-5">
-          <h1 class="display-4 mt-5">Registro de nova despesa</h1>
+          <h1 class="display-4 mt-5">Consulta de receita</h1>
+          <h4 class="text-info">Para uma melhor pesquisa, preencha apenas os campos que recorda e deixe o restante vazio</h4>
         </div>
       </div>
       <div class="row mb-2">
@@ -111,8 +113,8 @@
           <input type="text" class="form-control" placeholder="Valor" id="valor">
         </div>
         <div class="col-md-2 d-flex justify-content-end">
-          <button onclick="registrarDespesa()" type="button" class="btn btn-primary">
-           <i class="fas fa-plus"></i>
+          <button onclick="buscarTransacao('receita')" type="button" class="btn btn-primary">
+           <i class="fas fa-search"></i>
           </button>
         </div>
       </div>
@@ -143,6 +145,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
-    <script src="js/registrar_despesa.js"></script>
+    <script type="module" src="js/consultar_transacao.js"></script>
 </body>
 </html>
