@@ -43,3 +43,8 @@ footer p a{
   transition: 0.3s;
 }
 
+.historico.active{
+	background-color: white !important;
+  	color: #17a2b8 !important;
+}
+

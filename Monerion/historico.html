@@ -15,7 +15,7 @@
 
     <title>Orçamento Pessoal</title>
 </head>
-<body onload="mostrarTransacoes('despesa')">
+<body onload="mostrarHistorico()" >
     <header>
         <nav class="navbar navbar-expand-md navbar-light bg-info">
         <div class="container">
@@ -31,10 +31,10 @@
             <ul class="nav nav-pills ml-auto">
               <li class="nav-item"><a href="index.html" class="nav-link text-white">Home</a></li>
               <li class="nav-item dropdown">
-                <a href="" class="nav-link dropdown-toggle text-white active" data-toggle="dropdown" aria-expanded="false">Despesas</a>
+                <a href="" class="nav-link dropdown-toggle text-white" data-toggle="dropdown" aria-expanded="false">Despesas</a>
                 <div class="dropdown-menu">
                   <a class="dropdown-item" href="despesa.html">Registrar Despesas</a>
-                  <a class="dropdown-item" href="consulta_despesa.html">Consultar Despesas</a>
+                  <a class="dropdown-item" href="consulta_despesa.html">Consultar Histórico</a>
                 </div>
               </li>
               <li class="nav-item dropdown">
@@ -44,7 +44,7 @@
                   <a class="dropdown-item" href="receita.html">Consultar Receitas</a>
                 </div>
               </li>
-              <li class="nav-item"><a href="historico.html" class="nav-link text-white">Histórico</a></li>
+              <li class="nav-item"><a href="" class="nav-link text-white historico active">Histórico</a></li>
             </ul>
           </div>
         </div>
@@ -54,11 +54,19 @@
     <div class="container">
       <div class="row mb-5">
         <div class="col mb-5">
-          <h1 class="display-4 mt-5">Consulta de despesa</h1>
+          <h1 class="display-4 mt-5">Consulta de Histórico</h1>
           <h4 class="text-info">Para uma melhor pesquisa, preencha apenas os campos que recorda e deixe o restante vazio</h4>
         </div>
       </div>
       <div class="row mb-2">
+        <div class="col-md-2">
+          <select class="form-control" id="categoria">
+            <option value="">Categoria</option>
+            <option value="despesa">Despesa</option>
+            <option value="receita">Receita</option>
+          </select>
+        </div>
+
         <div class="col-md-2">
           <select class="form-control" id="ano">
             <option value="">Ano</option>
@@ -90,7 +98,7 @@
         <div class="col-md-2">
           <input class="form-control" id="dia" type="number" min="1" max="31" placeholder="Dia">
         </div>
-        <div class="col-md-6">
+        <div class="col-md-4">
           <select class="form-control" id="tipo">
             <option value="">Tipo</option>
             <option value="alimentacao">Alimentação</option>
@@ -98,9 +106,6 @@
             <option value="lazer">Lazer</option>
             <option value="saude">Saúde</option>
             <option value="transporte">Transporte</option>
-          </select>
-
-            
           </select>
         </div>
       </div>
@@ -113,7 +118,7 @@
           <input type="text" class="form-control" placeholder="Valor" id="valor">
         </div>
         <div class="col-md-2 d-flex justify-content-end">
-          <button onclick="buscarTransacao('despesa')" type="button" class="btn btn-primary">
+          <button onclick="buscarHistorico()" type="button" class="btn btn-primary">
            <i class="fas fa-search"></i>
           </button>
         </div>
@@ -124,6 +129,7 @@
           <thead>
             <tr>
               <th>ID</th>
+              <th>Categoria</th>
               <th>Ano</th>
               <th>Mês</th>
               <th>Dia</th>

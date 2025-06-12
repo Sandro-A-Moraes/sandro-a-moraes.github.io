@@ -52,7 +52,7 @@ function mostrarTransacoes(categoria){
         for(let i = 0; i<listaReceitas.length; i++){
             tbody.innerHTML += `
                 <tr>
-                    <td>${i+1}</td>
+                    <td>${listaReceitas[i].id}</td>
                     <td>${listaReceitas[i].ano}</td>
                     <td>${listaReceitas[i].mes}</td>
                     <td>${listaReceitas[i].dia}</td>
