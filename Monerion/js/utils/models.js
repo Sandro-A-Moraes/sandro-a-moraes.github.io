@@ -14,7 +14,6 @@ export class Transacao{
 export class Bd{
     constructor(){
         let id = localStorage.getItem('id')
-
         if(id === null){
             localStorage.setItem('id', 0)
         }
