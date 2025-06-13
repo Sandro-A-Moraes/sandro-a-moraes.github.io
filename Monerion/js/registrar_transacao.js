@@ -130,6 +130,8 @@ function registrarTransacao(categoria){
                 listaDespesas.push(transacao)
 
                 mostrarTransacoes(categoria)
+                $('#modalSucesso').modal('show')
+
         }
     } else{
         let ano = Number(document.getElementById('ano').value)
@@ -160,6 +162,9 @@ function registrarTransacao(categoria){
                 listaReceitas.push(transacao)
 
                 mostrarTransacoes(categoria)
+
+                $('#modalSucesso').modal('show')
+
         }
     }
 }
