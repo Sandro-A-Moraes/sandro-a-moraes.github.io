@@ -9,29 +9,30 @@ let bd = new Bd()
 
 function excluirTransacao(id, categoria){
     
-    localStorage.removeItem(id)
-    localStorage.setItem('id', localStorage.length-1)
-    if(categoria === 'despesa'){
-        mostrarTransacoes('despesa')
-    } else{
-        mostrarTransacoes('receita')
-    }
+    localStorage.removeItem(`${categoria}_${id}`)
+    mostrarTransacoes(categoria)
 
 }
 
 function mostrarTransacoes(categoria){
 
     if(categoria === 'despesa'){
-        listaDespesas.splice(0, listaDespesas.length)
+        // listaDespesas.splice(0, listaDespesas.length)
+        listaDespesas = []
         
         for(let i = 0; i < localStorage.length; i++){
             let chave = localStorage.key(i)
+            if (chave === 'id_despesa' || chave === 'id_receita') continue
+
+
             let item = JSON.parse(localStorage.getItem(chave))
 
             if (item && item.categoria === 'despesa') {
                 listaDespesas.push(item)
             }
         }
+
+        listaDespesas.sort((a, b) => a.id - b.id)
 
         tbody.innerHTML = ''
 
@@ -54,10 +55,14 @@ function mostrarTransacoes(categoria){
             ` 
         }
     } else{
-        listaReceitas.splice(0, listaReceitas.length)
+        // listaReceitas.splice(0, listaReceitas.length)
+        listaReceitas = []
 
         for(let i = 0; i < localStorage.length; i++){
             let chave = localStorage.key(i)
+            if (chave === 'id_despesa' || chave === 'id_receita') continue
+
+
             let item = JSON.parse(localStorage.getItem(chave))
 
             if (item && item.categoria === 'receita') {
@@ -65,6 +70,8 @@ function mostrarTransacoes(categoria){
             }
        
         }
+
+        listaReceitas.sort((a,b) => a.id - b.id)
 
         tbody.innerHTML = ''
          
@@ -94,20 +101,20 @@ function mostrarTransacoes(categoria){
 function registrarTransacao(categoria){
 
     if(categoria === 'despesa'){
-        let ano = document.getElementById('ano').value
+        let ano = Number(document.getElementById('ano').value)
         let mes = document.getElementById('mes').value
-        let dia = document.getElementById('dia').value
+        let dia = Number(document.getElementById('dia').value)
         let tipo = document.getElementById('tipo').value
         let descricao = document.getElementById('descricao').value
-        let valor = document.getElementById('valor').value
+        let valor = Number(document.getElementById('valor').value)
 
 
         if(ano === '' || mes === '' || (dia === '' || (dia<1 || dia>31))|| tipo === '' || descricao === '' || valor === ''){
             alert('Um dos campos está vazio ou incorreto! Preencha-o corretamente.')
         } else{
-            let id = bd.getProximoId()
+            let id = bd.getProximoId('despesa')
             let transacao = new Transacao(
-                    id = id,
+                    id,
                     categoria,
                     ano,
                     mes,
@@ -124,20 +131,20 @@ function registrarTransacao(categoria){
                 mostrarTransacoes(categoria)
         }
     } else{
-        let ano = document.getElementById('ano').value
+        let ano = Number(document.getElementById('ano').value)
         let mes = document.getElementById('mes').value
-        let dia = document.getElementById('dia').value
+        let dia = Number(document.getElementById('dia').value)
         let tipo = document.getElementById('tipo').value
         let descricao = document.getElementById('descricao').value
-        let valor = document.getElementById('valor').value
+        let valor = Number(document.getElementById('valor').value)
 
 
         if(ano === '' || mes === '' || (dia === '' || (dia<1 || dia>31))|| tipo === '' || descricao === '' || valor === ''){
             alert('Um dos campos está vazio ou incorreto! Preencha-o corretamente.')
         } else{
-            let id = bd.getProximoId()
+            let id = bd.getProximoId('receita')
             let transacao = new Transacao(
-                    id = id,
+                    id,
                     categoria,
                     ano,
                     mes,

@@ -1,12 +1,15 @@
 let tbody = document.getElementById('dados')
 
-export function carregarTransacoes(categoria) {
-    let lista = []
-    let tamanho = localStorage.length - 1
+function obterTodasTransacoes() {
+    const lista = []
+    
+    for (let i = 0; i < localStorage.length; i++) {
+        const chave = localStorage.key(i)
+        
+        if (chave === 'id_despesa' || chave === 'id_receita') continue
 
-    for (let i = 0; i < tamanho; i++) {
-        let item = JSON.parse(localStorage.getItem(i + 1))
-        if (item && item.categoria === categoria) {
+        const item = JSON.parse(localStorage.getItem(chave))
+        if (item) {
             lista.push(item)
         }
     }
@@ -14,12 +17,17 @@ export function carregarTransacoes(categoria) {
     return lista
 }
 
+export function carregarTransacoes(categoria) {
+    const todas = obterTodasTransacoes()
+    return todas.filter(t => t.categoria === categoria)
+}
+
 export function exibirTransacoes(lista) {
     tbody.innerHTML = ''
-    lista.forEach((t, i) => {
+    lista.forEach((t) => {
         tbody.innerHTML += `
             <tr>
-                <td>${t.id ?? i + 1}</td>
+                <td>${t.id}</td>
                 <td>${t.ano}</td>
                 <td>${t.mes}</td>
                 <td>${t.dia}</td>
@@ -33,10 +41,10 @@ export function exibirTransacoes(lista) {
 
 export function exibirHistoricoFiltrado(lista) {
     tbody.innerHTML = ''
-    lista.forEach((t, i) => {
+    lista.forEach((t) => {
         tbody.innerHTML += `
             <tr>
-                <td>${t.id ?? i + 1}</td>
+                <td>${t.id}</td>
                 <td>${t.categoria}</td>
                 <td>${t.ano}</td>
                 <td>${t.mes}</td>
@@ -49,24 +57,16 @@ export function exibirHistoricoFiltrado(lista) {
     })
 }
 
-export function carregarHistorico(){
-    let lista = []
-    let tamanho = localStorage.length - 1
-
-    for (let i = 0; i < tamanho; i++) {
-        let item = JSON.parse(localStorage.getItem(i + 1))
-            lista.push(item)
-    }
-
-    return lista
+export function carregarHistorico() {
+    return obterTodasTransacoes()
 }
 
-export function exibirHistorico(lista){
+export function exibirHistorico(lista) {
     tbody.innerHTML = ''
     lista.forEach((t, i) => {
         tbody.innerHTML += `
             <tr>
-                <td>${t.id ?? i + 1}</td>
+                <td>${i+1}</td>
                 <td>${t.categoria}</td>
                 <td>${t.ano}</td>
                 <td>${t.mes}</td>

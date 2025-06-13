@@ -13,29 +13,24 @@ export class Transacao{
 
 export class Bd{
     constructor(){
-        let id = localStorage.getItem('id')
-        if(id === null){
-            localStorage.setItem('id', 0)
+        if (localStorage.getItem('id_despesa') === null) {
+            localStorage.setItem('id_despesa', 0)
+        }
+
+        if (localStorage.getItem('id_receita') === null) {
+            localStorage.setItem('id_receita', 0)
         }
     }
-    getProximoId(){
-        let proximoId = localStorage.getItem('id')
-        return parseInt(proximoId) + 1
+
+    getProximoId(categoria){
+        let chaveId = categoria === 'despesa' ? 'id_despesa' : 'id_receita'
+        let proximoId = Number(localStorage.getItem(chaveId)) + 1
+        localStorage.setItem(chaveId, proximoId)
+        return proximoId
     }
 
     gravarTransacao(d){
-        let id = localStorage.getItem('id')
- 
-        if(id === null) {
-            id = 0
-        } else {
-            id = this.getProximoId()
-        }
-    
-        localStorage.setItem(id, JSON.stringify(d))
-    
-        localStorage.setItem('id', id)     
-        
+        const chave = `${d.categoria}_${d.id}`
+        localStorage.setItem(chave, JSON.stringify(d))
     }
-
 }
