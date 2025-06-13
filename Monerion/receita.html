@@ -111,7 +111,7 @@
           <input type="text" class="form-control" placeholder="Valor" id="valor">
         </div>
         <div class="col-md-2 d-flex justify-content-end">
-          <button onclick="registrarTransacao('receita')" type="button" class="btn btn-primary">
+          <button onclick="registrarTransacao('receita')" type="button" class="btn btn-primary" data-toggle="modal" data-target="#meuModal">
            <i class="fas fa-plus"></i>
           </button>
         </div>
@@ -137,6 +137,32 @@
         </table>
       </div>
 
+    </div>
+
+    <div class="modal fade" id="modalErro" tabindex="-1" role="dialog" aria-labelledby="modalErroLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+          <!-- Cabeçalho -->
+          <div class="modal-header bg-danger text-white">
+            <h5 class="modal-title" id="modalErroLabel">Erro ao Registrar Transação</h5>
+            <button type="button" class="close text-white" data-dismiss="modal" aria-label="Fechar">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <!-- Corpo do Modal -->
+          <div class="modal-body">
+            Um ou mais campos estão vazios ou preenchidos incorretamente. Por favor, verifique e tente novamente.
+          </div>
+
+          <!-- Rodapé -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+          </div>
+
+        </div>
+      </div>
     </div>
 
     <!-- JavaScript (Opcional) -->

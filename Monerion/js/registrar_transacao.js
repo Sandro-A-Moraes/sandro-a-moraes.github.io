@@ -110,7 +110,8 @@ function registrarTransacao(categoria){
 
 
         if(ano === '' || mes === '' || (dia === '' || (dia<1 || dia>31))|| tipo === '' || descricao === '' || valor === ''){
-            alert('Um dos campos está vazio ou incorreto! Preencha-o corretamente.')
+            $('#modalErro').modal('show')
+
         } else{
             let id = bd.getProximoId('despesa')
             let transacao = new Transacao(
@@ -140,7 +141,7 @@ function registrarTransacao(categoria){
 
 
         if(ano === '' || mes === '' || (dia === '' || (dia<1 || dia>31))|| tipo === '' || descricao === '' || valor === ''){
-            alert('Um dos campos está vazio ou incorreto! Preencha-o corretamente.')
+            $('#modalErro').modal('show')
         } else{
             let id = bd.getProximoId('receita')
             let transacao = new Transacao(
