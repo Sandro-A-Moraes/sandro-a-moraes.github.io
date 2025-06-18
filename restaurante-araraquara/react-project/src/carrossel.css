@@ -1,0 +1,298 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+:root{
+    --cor1:#F2B035;
+    --cor2:#D97904;
+    --cor3:#733702;
+    --cor4:#260F01;
+    --cor5:#7A614B;
+    --fonte-padrao: 'Poppins', Arial, sans-serif;
+}
+
+.carrossel {
+    width: 100%;
+    height: 100vh;
+    margin-top: 50px;
+    position: relative;
+    overflow: hidden;
+}
+
+.carrossel .list {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.carrossel .list .item img:hover{
+    transform: scale(1.1);
+}
+
+.carrossel .list .item img{
+    width: 180px;
+    height: 250px;
+    position: absolute;
+    top: 80%;
+    left: 70%;
+    border-radius: 20px;
+    transform: translateY(-70%);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+    background-size: cover;
+    background-position: 50% 50%;
+    z-index: 100;
+    transition: 1s;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+
+.carrossel .list .item:nth-child(1) img,
+.carrossel .list .item:nth-child(2) img {
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.carrossel .list .item:nth-child(3) img{
+    left: 67%;
+}
+
+.carrossel .list .item:nth-child(4) img{
+    left: calc(67% + 200px);
+}
+
+.carrossel .list .item:nth-child(5) img{
+    left: calc(67% + 400px);
+}
+
+.carrossel .list .item:nth-child(6) img{
+    left: calc(67% + 600px);
+}
+
+.carrossel .list .item:nth-child(n+7) img{
+    left: calc(67% + 800px);
+    opacity: 0;
+}
+.carrossel .list .item:nth-child(n+3) img:hover {
+    transform: scale(1.1) translateY(-70%);
+    z-index: 200;
+}
+
+.carrossel .list .item .content{
+    z-index: 1000;
+    display: none;
+}
+
+.carrossel .list .item:nth-child(1) .content{
+    display: block;
+}
+
+.list .item .content{
+    z-index: 10000;
+    position: absolute;
+    top: 50%;
+    left: 100px;
+    transform: translateY(-50%);
+    width: 400px;
+    text-align: left;
+    color: var(--cor3);
+    display: none;
+}
+
+.item:nth-child(2) .content{
+    display: block;
+}
+
+.content .title, .content .name{
+    font-family: 'Bebas Neue';
+    font-style: normal;
+}
+
+.content .title{
+    font-size: 100px;
+    text-transform: uppercase;
+    color: var(--cor2);
+    font-weight: bold;
+    line-height: 1;
+
+    opacity: 0;
+    animation: animate 1s ease-in-out 0.3s 1 forwards;
+}
+
+.content .name{
+    font-size: 100px;
+    text-transform: uppercase;
+    font-weight: bold;
+    line-height: 1;
+    text-shadow: 3px 4px 4px #99795c;
+
+    opacity: 0;
+    animation: animate 1s ease-in-out 0.6s 1 forwards;
+}
+
+.content .des{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    opacity: 0;
+    font-size: 18px;
+    margin-left: 5px;
+    color: var(--cor1);
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #73370272;
+
+    opacity: 0;
+    animation: animate 1s ease-in-out 0.9s 1 forwards;
+}
+
+.content .btn{
+    margin-left: 5px;
+
+    opacity: 0;
+    animation: animate 1s ease-in-out 1.2s 1 forwards;
+}
+
+.content .btn button{
+    padding:  10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border: 2px solid var(--cor1);
+}
+
+.content .btn button:nth-child(1){
+    background-color: #D97904;
+    color: #260F01;
+    margin-right: 15px;
+}
+
+.content .btn button:nth-child(2){
+    background: transparent;
+    color: var(--cor1);
+    border: 2px solid var(--cor1);
+    transition: 0.3s
+}
+
+.content .btn button:nth-child(2):hover{
+    background-color: var(--cor2);
+    color: var(--cor4);
+    border: 2px solid var(--cor1);
+    border-color: var(--cor2);
+}
+
+@keyframes animate{
+
+    from{
+        opacity: 0;
+        transform: translate(0, 100px);
+        filter: blur(33px);
+    }
+
+    to{
+        opacity: 1;
+        text-replace: translate(0);
+        filter: blur(0);
+    }
+}
+
+.arrows{
+    position: absolute;
+    top: 80%;
+    right: 32%;
+    z-index: 100;
+    width: 300px;
+    max-width: 30%;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.arrows button{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--cor2);
+    color: var(--cor3);
+    border: none;
+    outline: none;
+    font-size: 16px;
+    font-family: monospace;
+    font-weight: bold;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.arrows button:hover{
+    background-color: var(--cor1);
+    color: var(--cor4);
+}
+
+.carrossel .timeRunning{
+    position: absolute;
+    z-index: 1000;
+    width: 100%;
+    height: 4px;
+    background-color: var(--cor1);
+    left: 0;
+    top: 0;
+    animation: runningTime 10s linear 1 forwards;
+}
+
+@keyframes runningTime {
+    from{
+        width: 0%;
+    }
+    to{
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px){
+    .carrossel .list .item:nth-child(n+2) img{
+        display: none;
+    }
+
+    .des{
+        width: 100%;
+        padding: 50px;
+        transform: translate(-10%, 5%);
+    }
+
+    .arrows{
+        transform: translateY(100%);
+    }
+}
+
+@media (max-width: 540px){
+    .carrossel .list .item:nth-child(n+2) img{
+        display: none;
+    }
+
+    .carrossel .list .item .content .title,
+    .carrossel .list .item .content .name{
+        text-align: left;
+        transform: translateX(-20%);
+        font-size: 6em;
+    }
+
+    .des{
+        width: 70%;
+        padding: 50px;
+        transform: translate(-40%, 5%);
+    }
+
+    .btn button:nth-child(1){
+        transform: translateX(-20%);
+    }
+
+    .btn button:nth-child(2){
+        display: none;
+    }
+
+    .arrows{
+        position: absolute;
+        top: 80%;
+    }
+}
