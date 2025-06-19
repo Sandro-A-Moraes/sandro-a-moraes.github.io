@@ -1,0 +1,18 @@
+export const textoInicio = {
+    titulo: "Bem-vindo ao Restaurante Araraquara!",
+    paragrafo1: "Bem-vindo ao Restaurante Araraquara, onde a arte da culinária encontra a sofisticação do sabor! Embarque em uma jornada gastronômica única, onde nossos chefs dedicados criam verdadeiras obras-primas para satisfazer o seu paladar. Nossos pratos cuidadosamente elaborados combinam ingredientes frescos e técnicas culinárias inovadoras para oferecer uma experiência sensorial que desperta todos os sentidos. Explore nosso menu diversificado, repleto de opções que celebram a culinária local e internacional. De entradas irresistíveis a pratos principais que encantam, cada item é uma expressão do nosso compromisso com a qualidade e o prazer gastronômico.",
+    paragrafo2: "No Restaurante Araraquara, não é apenas sobre comer; é sobre se entregar a uma jornada culinária, onde cada garfada é uma celebração. Seja para uma refeição casual, uma celebração especial ou um encontro íntimo, estamos ansiosos para recebê-lo em nosso espaço acolhedor e encantador. Prepare-se para uma experiência gastronômica memorável. Bem-vindo ao Restaurante Araraquara, onde a arte de cozinhar encontra o prazer de receber você."
+}
+
+export const textoQuemSomos = {
+    titulo: "Quem Somos?",
+    paragrafo1: "O Restaurante Araraquara é o fruto de uma paixão pela culinária que começou há décadas. Fundado por um grupo de amigos apaixonados por gastronomia, nossa história tem suas raízes na tradição familiar e no amor pela boa comida.Inspirados pela rica cultura culinária de Araraquara, decidimos criar um espaço onde a autenticidade se encontra com a inovação. Nossos chefs talentosos e dedicados trazem para a mesa pratos cuidadosamente elaborados, utilizando ingredientes frescos e locais.",
+    paragrafo2: "Aqui, cada refeição é uma celebração da diversidade de sabores que a região oferece. Desde pratos clássicos até criações contemporâneas, nossa missão é proporcionar uma experiência gastronômica única, marcada pelo sabor e pela hospitalidade.Valorizamos cada cliente que cruza nossas portas e estamos comprometidos em criar momentos memoráveis em torno da mesa. Seja para uma reunião informal ou uma ocasião especial, estamos aqui para tornar cada visita uma experiência deliciosa e acolhedora. Que cada refeição seja uma história de amor pela gastronomia!"
+}
+
+export const textoChefes = {
+    nomeChefe1: "Chef Alexander Dubois",
+    paragrafoChefe1: "Chef francês conhecido por sua maestria na arte da alta cozinha. Com um pedigree de treinamento em prestigiadas escolas culinárias na França, Dubois traz uma abordagem clássica e refinada à culinária. Dubois é famoso por suas habilidades na apresentação de pratos que são verdadeiras obras de arte com sabores que transportam os comensais para a tradição culinária francesa. Seu compromisso com ingredientes frescos e sazonais é evidente em cada criação que sai de sua cozinha.",
+    nomeChefe2: "Chef Ricardo Santos",
+    paragrafoChefe2: "Chef brasileiro conhecido por sua abordagem inovadora na culinária fusion. Com uma carreira que se estende por duas décadas, Santos combina ingredientes tradicionais brasileiros com técnicas culinárias globais, resultando em pratos únicos e deliciosos. Sua paixão pela exploração gastronômica o levou a viajar por diferentes partes do mundo, absorvendo influências que ele habilmente incorpora em seu menu. O Chef Ricardo Santos oferece aos clientes uma experiência culinária única, onde sabores autênticos se fundem de maneiras inesperadas."
+}
