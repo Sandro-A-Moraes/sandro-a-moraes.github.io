@@ -1,4 +1,6 @@
 import React from 'react'
+import ItemFooter from './ItemFooter'
+import { itensFooter } from '../content/textos'
 
 const Footer = () => {
   return (
@@ -6,18 +8,7 @@ const Footer = () => {
         <h2>Deseja saber mais?</h2>
 
         <ul>
-          <li>
-            <img src="src/assets/imagens/instagram.png" alt="Instagram" />
-            <a href="#">Instagram</a>
-          </li>
-          <li>
-            <img src="src/assets/imagens/facebook.png" alt="Facebook" />
-            <a href="#">Facebook</a>
-          </li>
-          <li>
-            <img src="src/assets/imagens/whatsapp.png" alt="Whatsapp" />
-            <a href="https://api.whatsapp.com/send?phone=5594984389699">Whatsapp</a>
-          </li>
+          {itensFooter.map((item)=> <ItemFooter key={item.id} src={item.src} alt={item.alt} link={item.link} nome={item.nome}/>)}
         </ul>
 
         <p>&copy; 2025 Restaurante Araraquara. Todos os direitos reservados.</p>

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Cards = ({className, id, src, alt, nomeChefe, idParagrafo, textoChefe}) => {
+const Cards = ({className, id, imagem, alt, nome, paragrafoId, descricao}) => {
   return (
     <div className={className}>
         <a href="#">
@@ -8,13 +8,13 @@ const Cards = ({className, id, src, alt, nomeChefe, idParagrafo, textoChefe}) =>
             <img
                 id={id}
                 className="imagem"
-                src={src}
+                src={imagem}
                 alt={alt}
                 loading="lazy"/>
             </div>
         </a>
-        <h3>{nomeChefe}</h3>
-        <p id={idParagrafo}>{textoChefe}</p>
+        <h3>{nome}</h3>
+        <p id={paragrafoId}>{descricao}</p>
     </div>
   )
 }
