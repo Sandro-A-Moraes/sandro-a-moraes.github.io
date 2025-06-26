@@ -10,7 +10,7 @@ const App = () => {
         async function fetchWeather() {
             try{
                 const apiKey = '311c61f2f4cb46c886f164507252106'
-                const url = `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&lang=pt`
+                const url = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&lang=pt`
 
                 const response = await fetch(url)
                 const data = await response.json()
